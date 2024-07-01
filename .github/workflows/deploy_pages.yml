@@ -72,7 +72,15 @@ jobs:
           latex-bin
           mathastext
           microtype
-          ms
+          # change ms to those list
+          count1to
+          multitoc
+          prelim2e
+          ragged2e
+          everyshi(obsolete)
+          everysel(obsolete)
+          # the end of the ms list
+          # the list lies in https://www.ctan.org/pkg/ms
           physics
           preview
           ragged2e
