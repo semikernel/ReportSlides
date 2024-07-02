@@ -54,7 +54,8 @@ jobs:
     - name: Install TeX Live and extra packages
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended texlive-preview
+        sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended
+        sudo apt-get install texlive-full
     - name: Copy standalone.cls
       run: |
         sudo cp standalone.cls /usr/share/texlive/texmf-dist/tex/latex/base/standalone.cls
