@@ -56,6 +56,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended preview-latex
         # sudo apt-get install texlive-full
+    - name: Create directory for preview.sty
+      run: |
+        sudo mkdir -p /usr/share/texlive/texmf-dist/tex/latex/preview
+
     - name: Copy standalone.cls
       run: |
         sudo cp standalone.cls /usr/share/texlive/texmf-dist/tex/latex/base/standalone.cls
