@@ -90,7 +90,7 @@ jobs:
           # the end of the ms list
           # the list lies in https://www.ctan.org/pkg/ms
           physics
-          preview
+          preview-latex # Change the name from preview to preview-latex
           ragged2e
           relsize
           rsfs
