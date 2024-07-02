@@ -59,6 +59,7 @@ jobs:
     - name: Copy standalone.cls
       run: |
         sudo cp standalone.cls /usr/share/texlive/texmf-dist/tex/latex/base/standalone.cls
+        sudo cp preview.sty /usr/share/texlive/texmf-dist/tex/latex/preview/preview.sty
     - name: Setup TeX Live
       if: ${{ env.USES_TEX == 'true' }}
       uses: teatimeguest/setup-texlive-action@v3
