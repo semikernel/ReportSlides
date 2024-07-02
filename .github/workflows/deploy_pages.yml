@@ -42,7 +42,7 @@ jobs:
       if: ${{ env.MANIM == 'manim' }}
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-latex-extra # This for standalone install
+        # sudo apt-get install -y texlive-latex-extra # This for standalone install
         sudo apt-get install libcairo2-dev libpango1.0-dev ffmpeg freeglut3-dev
 
     - name: Install manimgl dependencies on Ubuntu
@@ -51,7 +51,10 @@ jobs:
         sudo apt-get update
         sudo apt-get install libpango1.0-dev ffmpeg freeglut3-dev xvfb
         nohup Xvfb $DISPLAY &
-
+    - name: Install TeX Live and extra packages
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended
     - name: Setup TeX Live
       if: ${{ env.USES_TEX == 'true' }}
       uses: teatimeguest/setup-texlive-action@v3
