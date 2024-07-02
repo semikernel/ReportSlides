@@ -56,6 +56,17 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y texlive texlive-latex-extra texlive-fonts-recommended preview-latex
         # sudo apt-get install texlive-full
+    - name: Install dvisvgm from source
+      run: |
+        sudo apt-get install -y cmake gcc g++ libkpathsea-dev libpotrace-dev
+        wget http://dvisvgm.de/uploads/tx_sfbooks/dvisvgm-2.4.tar.gz
+        tar -xzf dvisvgm-2.4.tar.gz
+        cd dvisvgm-2.4
+        ./configure
+        make
+        sudo make install
+        cd ..
+        rm -rf dvisvgm-2.4 dvisvgm-2.4.tar.gz
     - name: Create directory for preview.sty
       run: |
         sudo mkdir -p /usr/share/texlive/texmf-dist/tex/latex/preview
@@ -75,7 +86,7 @@ jobs:
           cm-super
           ctex
           doublestroke
-          dvisvgm
+          # dvisvgm
           everysel
           fontspec
           frcursive
